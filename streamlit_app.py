@@ -50,5 +50,5 @@ if "df" in st.session_state:
     filtered_df["direction"] = filtered_df["SENTIMENT_SCORE"].apply(lambda x: "Positive" if x >= 0 else "Negative")
     chart_data = filtered_df.groupby(["PRODUCT", "direction"]).size().unstack(fill_value=0)
    
-    st.bar_chart(chart_data)
+    st.bar_chart(chart_data,stack=False)
     
